@@ -4,8 +4,7 @@ Basic-flask is a simple hello world app. To be used as a base to build on, cooki
 
 Includes:
 
-	Bootstrap 3.3.6
-	Jquery 2.2.0
+	Bootstrap  v5.3.3
 
 Requirements
 -----------
