@@ -10,25 +10,34 @@ Includes:
 Requirements
 -----------
 
-	Python2.7 or Python3
+	Docker
 
-Install
--------
-Virtualenv or equivalent should be used.
+Running in a Dev Container
+---------------------------
+This repo includes a Dev Container config (`.devcontainer/devcontainer.json`) that builds the app's `Dockerfile`, installs dependencies, and forwards port 5000.
 
-To setup the virtual python environment and activate it:
+Open the folder in VS Code with the Dev Containers extension installed, then run "Dev Containers: Reopen in Container" from the command palette. The app will be available at:
 
-	virtualenv venv
-	. venv/bin/activate
+	http://localhost:5000/
 
-For python3:
-	
-	virtualenv -p /usr/bin/python3 venv
+Running with Docker
+--------------------
+Build and run the image directly without VS Code:
 
-Download and install requirements:
+	docker build -t basic-flask .
+	docker run --rm -p 5000:5000 basic-flask
+	http://localhost:5000/
 
-	clone the repository
-	pip install -r requirements.txt
+Install (without Docker)
+-------------------------
+Clone the repository, then create the virtual environment and install requirements:
+
+	uv venv
+	uv pip install -r requirements.txt
+
+Activate the virtual environment:
+
+	. .venv/bin/activate
 
 Running the app
 ---------------
